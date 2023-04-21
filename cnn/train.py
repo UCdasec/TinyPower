@@ -17,6 +17,7 @@ from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, TensorBoard
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import load_model
+from one_cycle_lr import OneCycleLR
 
 import checking_tool
 import process_data
@@ -78,8 +79,13 @@ def train_model(X_profiling, Y_profiling, model, save_file_name, epochs=150, bat
     log_dir = "logs/train_id_fit/" + datetime.now().strftime("%Y%m%d-%H%M%S")
     tensorBoard = TensorBoard(log_dir=log_dir, histogram_freq=1)
     checkpointer = ModelCheckpoint(save_file_name, monitor='val_accuracy', verbose=verbose, save_best_only=True, mode='max')
+    lr_scheduler = OneCycleLR(
+                    max_lr=5e-3, end_percentage=0.2, scale_percentage=0.1,
+                    maximum_momentum=None,
+                    minimum_momentum=None, verbose=True
+                )
     earlyStopper = EarlyStopping(monitor='val_accuracy', mode='max', patience=10)
-    callbacks = [checkpointer]
+    callbacks = [checkpointer, lr_scheduler]
 
     # Get the input layer shape
     input_layer_shape = model.get_layer(index=0).input_shape
@@ -116,13 +122,13 @@ def parseArgs(argv):
 
 class test_opts():
     def __init__(self):
-        self.input = "/home/erc528/lhp/dataset/power_dataset/X1_K0_U_Delay_200k.npz"
-        self.output = "./trained_model/unmasked_xmega_delay_cnn"
+        self.input = "/home/erc528/lhp/dataset/power_dataset/S1_K0_U_200k.npz"
+        self.output = "./trained_model/unmasked_stm_rs"
         self.verbose = 1
         self.target_byte = 2
         self.network_type = "hw_model"
         self.shifted = 0
-        self.attack_window = "1800_2800"
+        self.attack_window = "1200_2200"
         self.max_trace_num = 10000
 
 
@@ -154,9 +160,9 @@ if __name__ == "__main__":
     X_profiling, Y_profiling, input_shape = load_training_data(opts)
     print('trace data shape is: ', X_profiling.shape)
 
-    r = [0.6]*7
+    r = [1]*7
 
-    model = model_zoo.cnn_best(input_shape, r, emb_size=9, classification=True)
+    model = model_zoo.cnn_rs_stm(input_shape, r, emb_size=9, classification=True)
     # model = model_zoo.create_hamming_weight_model(input_shape)
     model.summary()
 

@@ -29,22 +29,25 @@ def gratitude_pr(rank_result):
     # aa = [0.2, 0.09, 0.16, 0.11, 0.05, 0.03, 0.06]
     gratitude = list()
     pruning_rate = list()
+    idxs = list()
     for rank in rank_result:
         rank = rank[1:]
         gra = list()
         for idx, r in enumerate(rank):
-            if idx == len(rank)-5:
+            if idx == len(rank)-10:
                 break
-            g = (rank[idx+5] - r) / 5
+            g = (rank[idx+10] - r) / 10
             gra.append(g)
 
         gratitude.append(np.array(gra))
     for gra in gratitude:
         for idx, g in enumerate(gra):
-          if g == max(gra):
-                pruning_rate.append(float("{:.2f}".format((idx+3)/(len(gra)+5))))
-                break
 
+          if g == max(gra):
+                idxs.append(idx+5)
+                pruning_rate.append(float("{:.2f}".format(1-(idx+5)/len(gra))))
+                break
+    print(idxs)
     print(pruning_rate)
 
 if __name__ == '__main__':

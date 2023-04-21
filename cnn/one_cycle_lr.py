@@ -142,9 +142,9 @@ class OneCycleLR(Callback):
     def on_train_begin(self, logs={}):
         logs = logs or {}
 
-        self.epochs = self.params['epochs']
-        self.batch_size = self.params['batch_size']
-        self.samples = self.params['samples']
+        self.epochs = 100
+        self.batch_size = 100
+        self.samples = 45000
         self.steps = self.params['steps']
 
         if self.steps is not None:

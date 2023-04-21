@@ -108,17 +108,17 @@ def parseArgs(argv):
 
 class test_opts():
     def __init__(self):
-        self.input = "/home/erc528/lhp/dataset/power_dataset/X2_K1_U_Delay_20k.npz"
+        self.input = "/home/erc528/lhp/dataset/power_dataset/S2_K2_U_20k.npz"
         # self.input = "/home/uc_sec/Documents/lhp/dataset/power_dataset/X1_K0_U_200k.npz"
-        self.output_root = "/home/erc528/lhp/PowerPruning/cnn/test_results/unmasked_xmega_delay_cnn"
-        self.model_file = "/home/erc528/lhp/PowerPruning/cnn/trained_model/unmasked_xmega_delay_cnn/hw_model_dir/best_model_1800_2800_trace_10000.hdf5"
+        self.output_root = "/home/erc528/lhp/PowerPruning/cnn/test_results/unmasked_stm_rs"
+        self.model_file = "/home/erc528/lhp/PowerPruning/cnn/trained_model/unmasked_stm_rs/hw_model_dir/best_model_1200_2200_trace_10000.hdf5"
         self.verbose = 1
         
         self.target_byte = 2
         self.leakage_model = "HW"
         # self.shifted = 0
         self.cross_dev = 1
-        self.attack_window = "1800_2800"
+        self.attack_window = "1200_2200"
         self.start_idx = 10000
         self.test_num = 10000
         self.preprocess = 0
