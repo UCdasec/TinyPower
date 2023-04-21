@@ -1,7 +1,7 @@
 #!/usr/bin python3.6
 import os
 import sys
-sys.path.append("/home/uc_sec/Documents/lhp/PowerPruning")
+sys.path.append("/home/erc528/lhp/PowerPruning")
 import argparse
 import pdb
 import h5py
@@ -116,7 +116,7 @@ def parseArgs(argv):
 
 class test_opts():
     def __init__(self):
-        self.input = "/home/uc_sec/Documents/lhp/dataset/power_dataset/X1_K0_U_Delay_200k.npz"
+        self.input = "/home/erc528/lhp/dataset/power_dataset/X1_K0_U_Delay_200k.npz"
         self.output = "./trained_model/unmasked_xmega_delay_cnn"
         self.verbose = 1
         self.target_byte = 2

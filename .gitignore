@@ -3,3 +3,6 @@ cnn/trained_model/
 pr_results/
 pruned_model/
 triplet/trained_model
+rank_result/
+.vscode/
+.gitignore

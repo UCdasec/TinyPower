@@ -3,7 +3,7 @@ import matplotlib
 matplotlib.use('Agg')
 import os
 import sys
-sys.path.append("/home/uc_sec/Documents/lhp/PowerPruning")
+sys.path.append("/home/erc528/lhp/PowerPruning")
 import argparse
 import pdb
 import h5py
@@ -108,10 +108,10 @@ def parseArgs(argv):
 
 class test_opts():
     def __init__(self):
-        self.input = "/home/uc_sec/Documents/lhp/dataset/power_dataset/X2_K1_U_Delay_20k.npz"
+        self.input = "/home/erc528/lhp/dataset/power_dataset/X2_K1_U_Delay_20k.npz"
         # self.input = "/home/uc_sec/Documents/lhp/dataset/power_dataset/X1_K0_U_200k.npz"
-        self.output_root = "/home/uc_sec/Documents/lhp/PowerPruning/cnn/test_results/unmasked_xmega_delay_cnn"
-        self.model_file = "/home/uc_sec/Documents/lhp/PowerPruning/cnn/trained_model/unmasked_xmega_delay_cnn/hw_model_dir/best_model_1800_2800_trace_10000.hdf5"
+        self.output_root = "/home/erc528/lhp/PowerPruning/cnn/test_results/unmasked_xmega_delay_cnn"
+        self.model_file = "/home/erc528/lhp/PowerPruning/cnn/trained_model/unmasked_xmega_delay_cnn/hw_model_dir/best_model_1800_2800_trace_10000.hdf5"
         self.verbose = 1
         
         self.target_byte = 2

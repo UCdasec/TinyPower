@@ -6,8 +6,8 @@ from scipy.spatial import distance
 # import torch
 import tensorflow as tf
 from tensorflow import keras
-from keras import layers, Model
-from tensorflow.keras.models import load_model
+# from keras import layers, Model
+from tensorflow.keras.models import load_model, Model
 import numpy as np
 import pandas as pd
 from sklearn.metrics import mutual_info_score as MI
@@ -142,13 +142,14 @@ def extract_weights(model):
             n_filters = a.shape[-1]
             for i in range(n_filters):
                 w = a[..., i]
-                r.append(np.average(w))
+                # r.append(np.average(w))
+                r.append(np.linalg.norm(w, 2))
             r = mapping(np.array(r), np.min(r), np.max(r))
             Results.append(sorted(r, reverse=True))
             r = list()
 
     df = pd.DataFrame(Results, index=None)
-    df.to_csv("unmasked_xmega_cnn_weight_ave.csv", header=False)
+    df.to_csv("unmasked_xmega_cnn_l2.csv", header=False)
 
 
 def fpgm(model, dist_type="l2"):
@@ -184,7 +185,7 @@ def fpgm(model, dist_type="l2"):
 class test_opts():
     def __init__(self):
         self.input = "/home/erc/PycharmProjects/TripletPowerVanilla-master/S1_K0_U_200k.npz"
-        self.root_dir = "/home/uc_sec/Documents/lhp/PowerPruning/cnn/trained_model/unmasked_xmega_cnn/hw_model_dir/best_model_10000.hdf5"
+        self.root_dir = "/home/erc528/lhp/PowerPruning/cnn/trained_model/unmasked_xmega_cnn/hw_model_dir/best_model_10000.hdf5"
         self.test_num = 5000
         self.target_byte = 2
         self.leakage_model = 'HW'
@@ -199,12 +200,8 @@ if __name__ == '__main__':
     model = load_model(opts.root_dir)
     # model.summary()
 
-    # target_output = extract_layers(model)
-    # rank_result = extract_feature_maps(opts, model, target_output)
-    # distances = cal_dis(model, target_output, target_conv, target, 'l2')
-    # extract_weights(model)
-    # cal_dis(model, 'l2')
-    fpgm(model)
+    extract_weights(model)
+    # fpgm(model)
 
 
 
