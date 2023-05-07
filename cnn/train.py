@@ -160,10 +160,17 @@ if __name__ == "__main__":
     X_profiling, Y_profiling, input_shape = load_training_data(opts)
     print('trace data shape is: ', X_profiling.shape)
 
+    #FOR ORIGINAL LARGE MODEL:
     r = [1]*7
 
     model = model_zoo.cnn_rs_xmega(input_shape, r, emb_size=9, classification=True)
     # model = model_zoo.create_hamming_weight_model(input_shape)
+    
+    #FOR PRUNING:  
+    #r = [0.6] * 7
+#     pruned_model = model_zoo.cnn_rs_stm(input_shape, r, emb_size=9, classification=True)
+#     model = model_zoo.copy_weights(pre_trained_model_path, pruned_model, idx_csv_file)
+    
     model.summary()
 
     if 'hw_model' == network_type:
