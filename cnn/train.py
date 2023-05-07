@@ -122,13 +122,13 @@ def parseArgs(argv):
 
 class test_opts():
     def __init__(self):
-        self.input = "/home/erc528/lhp/dataset/power_dataset/S1_K0_U_200k.npz"
-        self.output = "./trained_model/unmasked_stm_rs"
+        self.input = "/home/erc528/lhp/dataset/power_dataset/X1_K0_U_200k.npz"
+        self.output = "./trained_model/unmasked_xmega_rs"
         self.verbose = 1
         self.target_byte = 2
         self.network_type = "hw_model"
         self.shifted = 0
-        self.attack_window = "1200_2200"
+        self.attack_window = "1800_2800"
         self.max_trace_num = 10000
 
 
@@ -162,7 +162,7 @@ if __name__ == "__main__":
 
     r = [1]*7
 
-    model = model_zoo.cnn_rs_stm(input_shape, r, emb_size=9, classification=True)
+    model = model_zoo.cnn_rs_xmega(input_shape, r, emb_size=9, classification=True)
     # model = model_zoo.create_hamming_weight_model(input_shape)
     model.summary()
 

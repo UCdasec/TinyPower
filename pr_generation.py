@@ -25,7 +25,7 @@ def predefined_pr(rank_result):
     print(arch)
 
 
-def gratitude_pr(rank_result):
+def gratitude_pr(rank_result, n):
     # aa = [0.2, 0.09, 0.16, 0.11, 0.05, 0.03, 0.06]
     gratitude = list()
     pruning_rate = list()
@@ -34,9 +34,9 @@ def gratitude_pr(rank_result):
         rank = rank[1:]
         gra = list()
         for idx, r in enumerate(rank):
-            if idx == len(rank)-10:
+            if idx == len(rank)-n:
                 break
-            g = (rank[idx+10] - r) / 10
+            g = (rank[idx+n] - r) / n
             gra.append(g)
 
         gratitude.append(np.array(gra))
@@ -44,8 +44,8 @@ def gratitude_pr(rank_result):
         for idx, g in enumerate(gra):
 
           if g == max(gra):
-                idxs.append(idx+5)
-                pruning_rate.append(float("{:.2f}".format(1-(idx+5)/len(gra))))
+                idxs.append(int(idx + n/2))
+                pruning_rate.append(float("{:.2f}".format(1-(int(idx + n/2))/len(gra))))
                 break
     print(idxs)
     print(pruning_rate)
@@ -59,4 +59,5 @@ if __name__ == '__main__':
         rr.append(r)
     # predefined_pr(rank_result)
     # rank_result = list(rank_result)
-    gratitude_pr(rr)
+    n = 10
+    gratitude_pr(rr, n)

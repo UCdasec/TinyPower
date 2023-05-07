@@ -70,7 +70,7 @@ def ranking_curve(preds, key, plaintext, target_byte, rank_root, leakage_model='
     hw_mapping = create_hw_label_mapping()
 
     # GE/SR is averaged over 100 attacks
-    num_averaged = 10
+    num_averaged = 5
     # max trace num for attack
     guessing_entropy = np.zeros((num_averaged, trace_num_max))
     success_flag = np.zeros((num_averaged, trace_num_max))
