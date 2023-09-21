@@ -66,6 +66,6 @@ Then you should run the following commands
 
 
 ## Contacts
-Chenggang Wang: wang2c9@mail.uc.edu, University of Cincinnati
+Mabon Ninan: ninanmm@mail.uc.edu, University of Cincinnati
 
 Boyang Wang: boyang.wang@uc.edu, University of Cincinnati
