@@ -1,17 +1,28 @@
-```python
-python cnn/train.py -i /home/mabon/Tiny_power/datasets/power/xmega_unmasked/X1_K1_200k.npz -o /home/mabon/temp333 -m /home/mabon/Tiny_power/models/original/HW/xmega/X1_50k -e 150 -tb 2 -lm hw_model -tn 50000 -pr .99 -aw 1800_2800 -db True
-```
+# Structured Pruning Based on Fixed Pruning Rate
+Use this script to prune mode based on fppm/l2nor score and a fixed pruning rate.
 
 ```python
-python cnn/train.py -i /home/mabon/Tiny_power/datasets/power/xmega_unmasked/X1_K1_200k.npz -o /home/mabon/temp333 -m /home/mabon/Tiny_power/models/custom_prunded/HW/xmega/X1/fpgm/h4 -e 150 -tb 2 -lm hw_model -tn 50000 -pr .5 -aw 1800_2800
+python cnn/new_train.py -i <input to .npz file for trace> -o < Finetured model output directory>
+-m <original model directory for initial weights > -e <epochs to train> -tb <target byte>
+-lm <leakage model (hw_model/ID) -tn <number of training traces> -pr <prurning rate>
+-aw <attack window> -rp <rank paths (fpgm/l2) -CP <Custom pruinng. Set to false for structured pruning>
 ```
+
+# Automatic Pruning Based on Fixed Pruning Rate
+Use this script to prune mode based on fppm/l2nor score and our alogorith Minidron.
+
 
 ```python
 
-python cnn/new_train.py -i /home/mabon/Tiny_power/datasets/power/xmega_unmasked/X1_K1_200k.npz -o /home/mabon/temp5 -m /home/mabon/Tiny_power/models/original/HW/xmega/X1_50k -v -e 150 -tb 2 -lm hw_model -aw 1800_2800 -tn 10000 -rp /home/mabon/Tiny_power/Score/Xmega/HW/X1/fpgm/fpgm_idx.csv -CP True -CPP /home/mabon/Tiny_power/Score/CUSTOM/Xmega/HW/X1/fpgm/custum/N4/1-pr.csv 
+python cnn/new_train.py -i <input to .npz file for trace> -o < Finetured model output directory>
+-m <original model directory for initial weights > -e <epochs to train> -tb <target byte>
+-lm <leakage model (hw_model/ID) -tn <number of training traces> -aw <attack window> 
+-rp <rank paths (fpgm/l2) -CP <Custom pruinng. Set to TRUE for Minidrop>
+-CPP <Path to Minidrop Scroes>
 ```
 
 
+# Input parameters to new_train.py
 
 ```python
 def parseArgs(argv):
