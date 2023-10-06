@@ -1,7 +1,7 @@
 #!/usr/bin python3.6
 import os
 import sys
-sys.path.append("/home/mabon/Tiny_power/ANIIPAPer")
+sys.path.append("/home/mabon/Tiny_power/Unstructured_Pruning SCA")
 import argparse
 import pdb
 import h5py
