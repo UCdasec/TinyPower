@@ -8,7 +8,7 @@ Unstructured pruning converts an original dense network into a sparse network. T
 The unstructured pruning does not consider any relationship between the pruned weights
 
 
-![image](https://github.com/UCdasec/TinyPower/assets/54579704/3d3aeefb-403d-443d-8fe7-8c47a6afde21)
+![image](https://github.com/UCdasec/TinyPower/assets/54579704/3d3aeefb-403d-443d-8fe7-8c47a6afde21) [^1]
 
 
 # Pruning of Deep Learning Model for HW/ID Leakage Detection
@@ -41,3 +41,4 @@ python train.py --input <input_data_file> --output <output_directory> --model_di
 * target_byte: The target byte to detect leakage for. The target byte should be an integer in the range 0-255.
 
 * pruning_rate: The percentage of weights to prune. The pruning rate should be a float in the range 0.0-1.0.
+[^1]: (https://pohsoonchang.medium.com/neural-network-pruning-update-cda56343e5a2#:~:text=Unstructured%20pruning%20converts%20an%20original,zeros%20in%20their%20parameter%20matrix.)
