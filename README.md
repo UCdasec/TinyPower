@@ -37,5 +37,7 @@ Note: the above link need to be updated every 6 months due to certain settings o
 
 # Contacts
 Mabon Ninan ninanmm@mail.uc.edu
+
 Boyang Wang wang2ba@ucmail.uc.edu
+
 Haipeng Li li2hp@mail.uc.edu
