@@ -16,7 +16,7 @@ This project is written in Python 3.8 and Tensorflow 2.3.1 . Our experiments is 
 * GPU machine (Intel i9 CPU, 64GB memory,and a NVIDIA Titan RTX GPU).
 * Raspberry Pi 4 Model B running Debian Version 11 (64-bit) with Broadcom BCM2711, quad-core Cortex-A72 64-bit 1.8GHz, and 4GB SDRAM.
   
-## Reproduce Our Results
+## Code and Datasets
 ### Code 
 The codebased include 2 folders: MiniDrop, and Unstructured_Pruning SCA
   * MiniDrop
