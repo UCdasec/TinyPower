@@ -1,4 +1,9 @@
 # TinyPower
+**The dataset and code are for research purpose only** 
+
+Side-channel attacks leverage correlations between power consumption and intermediate results of encryption to infer encryption keys. Recent studies show that deep learning offers promising results in the context of side-channel attacks. However, neural networks utilized in deep-learning side-channel attacks are complex with substantial amounts of parameters and consume significant memory. As a result, it is challenging to perform deep-learning side-channel attacks on resource-constrained devices. 
+
+This project proposes a framework, named TinyPower, which leverages pruning to reduce the number of parameters of neural networks for side-channel attacks. Pruned neural networks obtained from our framework can successfully run side-channel attacks with a much lower number of parameters and less memory. Specifically, we focus on structured pruning over filters of Convolutional Neural Networks (CNNs). We demonstrate the effectiveness of structured pruning over power and EM traces of AES-128 running on microcontrollers (AVR XMEGA and ARM STM32) and FPGAs (Xilinx Artix-7). Our experimental results show that we can achieve a reduction rate of 98.8\% (e.g., reducing the number of parameters from 53.1 million to 0.59 million) on a CNN and still recover keys on XMEGA. For STM32 and Artix-7, we achieve a reduction rate of 92.9\% and 87.3\% on a CNN respectively. We also demonstrate that our pruned CNNs can effectively perform the attack phase of side-channel attacks on a Raspberry Pi 4 with less than 2.5 millisecond inference time per trace and less than 41 MB memory usage per CNN.  
 
 ## Reference
 When reporting results that use the dataset or code in this repository, please cite the paper below:
@@ -25,9 +30,9 @@ The codebased include 2 folders: MiniDrop, and Unstructured_Pruning SCA
 
 
 ### Datasets
-Our datasets used in this study can be accessed through the link below (last modified Nov 2023):
+Our datasets used in this study can be accessed through the link below (**last modified Nov 2023**):
 
-TBD 
+https://mailuc-my.sharepoint.com/:f:/g/personal/wang2ba_ucmail_uc_edu/EoE4ELOgXD1Em7YzFTAQ0ywB_jB1Ic53Qcug9WzZZYj2UA?e=ERwbK5 
 
 Note: the above link need to be updated every 6 months due to certain settings of OneDrive. If you find the links are expired and you cannot access the data, please feel free to email us (boyang.wang@uc.edu). We will be update the links as soon as we can. Thanks!
 
