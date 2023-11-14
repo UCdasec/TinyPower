@@ -8,7 +8,7 @@ This project proposes a framework, named TinyPower, which leverages pruning to r
 ## Reference
 When reporting results that use the dataset or code in this repository, please cite the paper below:
 
-Haipeng Li, Mabon Ninan, Boyang Wang, John M. Emmert, "TinyPower: Side-Channel Attacks with Tiny Neural Networks," IEEE International Symposium on Hardware Oriented Security and Trust (HOST 2024), Washington DC, USA, May 6-9 2024
+Haipeng Li, Mabon Ninan, Boyang Wang, John M. Emmert, "TinyPower: Side-Channel Attacks with Tiny Neural Networks," IEEE International Symposium on Hardware Oriented Security and Trust (**IEEE HOST 2024**), Washington DC, USA, May 6-9 2024
 
 ## Requirements
 This project is written in Python 3.8 and Tensorflow 2.3.1 . Our experiments is running with:
@@ -46,3 +46,5 @@ Mabon Ninan ninanmm@mail.uc.edu
 Boyang Wang wang2ba@ucmail.uc.edu
 
 Haipeng Li li2hp@mail.uc.edu
+
+Research Group Websige: https://homepages.uc.edu/~wang2ba/
