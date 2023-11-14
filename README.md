@@ -47,4 +47,4 @@ Boyang Wang boyang.wang@uc.edu
 
 Haipeng Li li2hp@mail.uc.edu
 
-Research Group Websige: https://homepages.uc.edu/~wang2ba/
+Research Group Webpage: https://homepages.uc.edu/~wang2ba/
