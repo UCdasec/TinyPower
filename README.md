@@ -30,9 +30,9 @@ The codebased include 2 folders: MiniDrop, and Unstructured_Pruning SCA
 
 
 ### Datasets
-Our datasets used in this study can be accessed through the link below (**last modified Sept 2024**):
+Our datasets used in this study can be accessed through the link below (**last modified April 2025**):
 
-https://mailuc-my.sharepoint.com/:f:/g/personal/wang2ba_ucmail_uc_edu/EoE4ELOgXD1Em7YzFTAQ0ywB_jB1Ic53Qcug9WzZZYj2UA?e=KWvn86
+https://mailuc-my.sharepoint.com/:f:/g/personal/wang2ba_ucmail_uc_edu/EoE4ELOgXD1Em7YzFTAQ0ywB_jB1Ic53Qcug9WzZZYj2UA?e=fHbWWI
 
 Note: the above link need to be updated every 6 months due to certain settings of OneDrive. If you find the links are expired and you cannot access the data, please feel free to email us (Dr. Boyang Wang, boyang.wang@uc.edu). We will be update the links as soon as we can (typically within 2 days). Thanks!
 
